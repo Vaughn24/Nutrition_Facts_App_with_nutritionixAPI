@@ -1,5 +1,5 @@
 fetch(
-    "https://trackapi.nutritionix.com/v2/search/instant?query=apple",
+    "https://trackapi.nutritionix.com/v2/search/instant?query=apple",// I-backtick nlng siguro yung sa query na part para pag search
     {
     headers: {
     "x-app-id": "f4b3ec1a",
@@ -10,3 +10,7 @@ fetch(
     .then(data => {
         console.log(data)
     })
+
+
+
+    $('#test1').nutritionLabel();

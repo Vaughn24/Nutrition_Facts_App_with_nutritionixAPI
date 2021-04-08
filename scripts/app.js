@@ -1,5 +1,4 @@
 
-$('#test1').nutritionLabel();
 
 var search_food = ""
 

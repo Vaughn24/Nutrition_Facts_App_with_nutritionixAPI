@@ -40,9 +40,7 @@ function getfoodnutrients(search_food){
             const sugars = document.querySelector("#sugars")
             const protein = document.querySelector("#protein")
             const vitamin_a = document.querySelector("#vitamin-a")
-            const vitamin_b = document.querySelector("#vitamin-b")
             const vitamin_c = document.querySelector("#vitamin-c")
-            const vitamin_d = document.querySelector("#vitamin-d")
             const calcium = document.querySelector("#calcium")
             const iron = document.querySelector("#iron")
 
@@ -51,10 +49,12 @@ function getfoodnutrients(search_food){
             serving_size.innerHTML = data.foods[0].serving_weight_grams;
             calories.innerHTML = Math.round(data.foods[0].nf_calories)
 
+
             total_fat.innerHTML = Math.round(10*data.foods[0].nf_total_fat)/10;
             // ((APS*100)/65) = %DV
             total_fat_pct.innerHTML = Math.round(((data.foods[0].nf_total_fat*100)/65))
 
+            calories_from_fat.innerHTML = Math.round((total_fat.innerHTML)*9)
 
             saturated_fat.innerHTML = Math.round(10*(data.foods[0].nf_saturated_fat))/10;
             // ((APS*100)/20) = %DV
@@ -152,9 +152,22 @@ function getfoodnutrients(search_food){
                 vitamin_a.innerHTML = 0;
             }
 
-            vitamin_b.innerHTML = data.foods[0];
-            vitamin_c.innerHTML = data.foods[0];
-            vitamin_d.innerHTML = data.foods[0];
+            try{
+                for(i=0; i < data.foods[0].full_nutrients.length; i++){
+                    counter_nutrient = 0
+                    if(data.foods[0].full_nutrients[i].attr_id == 401){
+                        // ((APS*100)/60) = %DV
+                        counter_nutrient = data.foods[0].full_nutrients[i].value
+                        vitamin_c.innerHTML = Math.round(((counter_nutrient*100)/60))
+                    }else if(counter_nutrient == 0){
+                        vitamin_c.innerHTML == 0
+
+                    }
+                }
+                
+            } catch(err){
+                vitamin_c.innerHTML = 0;
+            }
 
             try{
                 for(i=0; i < data.foods[0].full_nutrients.length; i++){

@@ -87,7 +87,7 @@ function processData(data, multiplier) {
 
     total_fat.innerHTML = ((Math.round(10 * data.foods[0].nf_total_fat) / 10) * multiplier).toFixed(1);
     // ((APS*100)/65) = %DV
-    total_fat_pct.innerHTML = Math.round(((data.foods[0].nf_total_fat * 100) / 65))
+    total_fat_pct.innerHTML = (((data.foods[0].nf_total_fat * 100) / 65)* multiplier).toFixed(1)
 
     calories_from_fat.innerHTML = Math.round((total_fat.innerHTML) * 9)
 

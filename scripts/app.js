@@ -1,3 +1,7 @@
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
 function getfoodnutrients(search_food){
 
     fetch(
@@ -7,13 +11,14 @@ function getfoodnutrients(search_food){
         body : JSON.stringify({query : search_food}),
         headers: {
         "Content-Type": "application/json", 
-        "x-app-id": "f4b3ec1a",
-        "x-app-key": "63ee9abe0afb08659336e8666e5ffb86",
+        "x-app-id": "b4da6451",
+        "x-app-key": "af3ebc69cbdc0eb1a348bb541fcefcce",
         },
         })
         .then(res => res.json())
         .then(data => {
             console.log(data)
+
 
 
 
@@ -45,7 +50,14 @@ function getfoodnutrients(search_food){
             const iron = document.querySelector("#iron")
 
 
-            food.innerHTML = data.foods[0].food_name;
+            try{
+                food_name = data.foods[0].food_name
+                food.innerHTML = capitalizeFirstLetter(food_name);
+            }
+            catch(err){
+                alert("Sorry, the food entered is not in the database.")
+            }
+            
             serving_size.innerHTML = data.foods[0].serving_weight_grams;
             calories.innerHTML = Math.round(data.foods[0].nf_calories)
 
@@ -204,7 +216,18 @@ function getfoodnutrients(search_food){
             }
 
 
+            // IMAGE
+
+            const food_image = document.querySelector("#food-image")
+            document.getElementById("food-image").src = data.foods[0].photo.highres;
+            
+
+
+
         })
+
+
+
 
 
 }
@@ -215,8 +238,8 @@ function getfood(search_food){
         `https://trackapi.nutritionix.com/v2/search/instant?query=${search_food}`,
         {
         headers: {
-        "x-app-id": "f4b3ec1a",
-        "x-app-key": "63ee9abe0afb08659336e8666e5ffb86",
+        "x-app-id": "b4da6451",
+        "x-app-key": "af3ebc69cbdc0eb1a348bb541fcefcce",
         },
         })
         .then(res => res.json())

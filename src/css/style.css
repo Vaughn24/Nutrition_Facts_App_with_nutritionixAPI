@@ -1,4 +1,6 @@
-
+*{
+  background-color: rgb(242, 242, 242);
+}
 
 /* SEARCH BAR CSS */
 .search-wrap {
@@ -67,26 +69,40 @@
 
 /* END OF SEARCH BAR CSS */
 
+/* FOOD IMAGE STYLE */
+.food-image-style{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width:10em;
+  height: 10em;
+}
+
+
+
+
 /* NUTRITION TABLE */
 
 .nutritionfacts { 
-  background-color:white; 
   border:1px solid black; 
-  padding:3px; width:244px; 
+  padding:3px; 
+  width:15.2em; 
   margin-left: auto;
   margin-right: auto;
   
 }
+
 .nutritionfacts td { 
   color:black; 
   font-family:'Arial Black','Helvetica Bold',sans-serif; 
-  font-size:8pt; 
+  font-size:11pt; 
   padding:0; 
 }
-.nutritionfacts td.header { 
+.nutritionfacts td.caption { 
   font-family:'Arial Black','Helvetica Bold',sans-serif; 
   font-size:28px; 
   white-space:nowrap; 
+  text-align: center;
 }        
 .nutritionfacts div.label { 
   float:left; 

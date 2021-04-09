@@ -10,27 +10,29 @@
 </head>
 <body>
     <div class="container">
+        <div class="header">
         <div class="search-wrap">
             <input id="search" name="search" type="text" placeholder="What're we looking for ?">
             <input id="search_submit" value="Rechercher" type="submit" onclick="searchValue()">
 
-      </div>
+        </div>
+        </div>
+
+      <img class="food-image-style" id="food-image" src="https://www.kindpng.com/picc/m/502-5025070_avocado-notperfect-green-healthy-food-cute-happy-cute.png">
 
 <!-- NUTRITION FACTS -->
 
 <div class="nutritionfacts">
     <table width="242" cellspacing="0" cellpadding="0">
         <tbody><tr>
-            <td align="center" class="header">Nutrition Facts</td>
+            <td class="caption">Nutrition Facts</td>
         </tr>
+        <div class="neck"></div>
         <td>Food: <span class="labellight" id="food"></span></td>
         <tr>
-            
             <td><div class="serving">Serving Size: <span id="serving-size">0</span>g </div></td>
-        </tr>
-        <tr style="height: 7px">
-            <td bgcolor="#000000"></td>
-        </tr>
+
+        </tr> 
         <tr>
             <td style="font-size: 7pt"><div class="line">Amount Per Serving</div></td>
         </tr>
@@ -117,7 +119,7 @@
                 
             </div></td>
         </tr>
-                    <tr>
+        <tr>
             <td class="indent">
                 <div class="line">
                 <div class="labellight">Sugars <div class="weight" id="sugars">0.0</div>g</div>
@@ -131,9 +133,15 @@
                 </div>
             </div></td>
         </tr>
-        <tr style="height: 7px">
-            <td bgcolor="#000000"></td>
+
+        <tr>
+            <td>
+                <div class="line">
+                </div>
+            </div></td>
         </tr>
+
+        
                     <tr>
             <td>
                 <table cellspacing="0" cellpadding="0" border="0" class="vitamins">
@@ -165,9 +173,7 @@
 <!-- END OF NUTRITION FACTS -->
 
 
-<div class="food-image">
 
-</div>
 
     </div>
 

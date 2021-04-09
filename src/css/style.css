@@ -115,9 +115,15 @@
 .nutritionfacts div.line { 
   border-top:1px solid black; 
 }
-.nutritionfacts div.labellight { 
-  float:left; 
+.nutritionfacts .labellight { 
+
   font-family:Arial,Helvetica,sans-serif; 
+  font-weight: normal;
+}
+.nutritionfacts span.labellight { 
+
+  font-family: Arial,Helvetica,sans-serif; 
+  font-size: 1.5em;
 }
 .nutritionfacts .highlighted {
   border:1px dotted grey;

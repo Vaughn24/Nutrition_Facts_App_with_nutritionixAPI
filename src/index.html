@@ -23,10 +23,10 @@
         <tbody><tr>
             <td align="center" class="header">Nutrition Facts</td>
         </tr>
-        <td>Rice</td>
+        <td>Food: <span class="labellight" id="food"></span></td>
         <tr>
             
-            <td><div class="serving">Serving Size: <span class="highlighted">180.0g</span> </div></td>
+            <td><div class="serving">Serving Size: <span id="serving-size">0</span>g </div></td>
         </tr>
         <tr style="height: 7px">
             <td bgcolor="#000000"></td>
@@ -50,75 +50,84 @@
         <tr>
             <td>
                 <div class="line">
-                <div class="label">Total Fat <div class="weight" id="total-fat">0.0g</div></div>
-                <div class="dv" id="total-fat-p">0%</div>
+                <div class="label">Total Fat <div class="weight"><span id="total-fat">0.0</span>g</div></div>
+                <div class="dv"><span id="total-fat-pct">0</span>%</div>
                 </div>
             </td>
         </tr>
                     <tr>
             <td class="indent">
                 <div class="line">
-                <div class="labellight">Saturated Fat <div class="weight" id="saturated-fat">0.0g</div></div>
-                <div class="dv" id="saturated-fat-p">0%</div>
+                <div class="labellight">Saturated Fat <div class="weight" id="saturated-fat">0.0</div>g<div class="dv"> 
+                    <span id="saturated-fat-pct">0</span>%</div></div>
                 </div>
             </td>
         </tr>
         <tr>
             <td class="indent">
                 <div class="line">
-                <div class="labellight">Polyunsaturated Fat <div class="weight" id="polyunsaturated-fat">0.0g</div></div>
+                <div class="labellight">Polyunsaturated Fat <div class="weight" id="polyunsaturated-fat">0.0</div>g</div>
                 </div>
             </td>
         </tr>
                     <tr>
             <td class="indent">
                 <div class="line">
-                <div class="labellight">Monounsaturated Fat <div class="weight" id="monounsaturated-fat">0.0g</div></div>
+                <div class="labellight">Monounsaturated Fat <div class="weight" id="monounsaturated-fat">0.0</div>g</div>
                 </div>
             </td>
         </tr>
                     <tr>
             <td>
                 <div class="line">
-                <div class="label">Cholesterol <div class="weight" id="cholesterol">0mg</div></div>
-                <div class="dv" id="cholesterol-p">0%</div>
+                <div class="label">Cholesterol <div class="weight"><span id="cholesterol">0</span>mg</div></div>
+                <div class="dv" ><span id="cholesterol-pct">0</span>%</div>
                 </div>
             </td>
         </tr>
                     <tr>
             <td>
                 <div class="line">
-                <div class="label">Sodium <div class="weight" id="sodium">0mg</div></div>
-                <div class="dv" id="sodium-p">0%</div>
+                <div class="label">Sodium <div class="weight"><span id="sodium">0</span>mg</div></div>
+                <div class="dv"><span id="sodium-pct">0</span>%</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="line">
+                <div class="label">Potassium <div class="weight"><span id="potassium">0</span>mg</div></div>
+                <div class="dv"><span id="potassium-pct">0</span>%</div>
                 </div>
             </td>
         </tr>
                     <tr>
             <td>
                 <div class="line">
-                <div class="label">Total Carbohydrates <div class="weight" id="total-carbohydrates">0.0g</div></div>
-                <div class="dv" id="total-carbohydrates-p">0%</div>
+                <div class="label">Total Carbohydrates <div class="weight"><span id="total-carbohydrates">0.0</span>g</div></div>
+                <div class="dv" ><span id="total-carbohydrates-pct">0</span>%</div>
                 </div>
             </td>
         </tr>
                     <tr>
             <td class="indent">
                 <div class="line">
-                <div class="labellight">Dietary Fiber <div class="weight" id="dietary-fiber">0.0g</div></div>
-                <div class="dv" id="dietary-fiber-p">0%</div>
+                <div class="labellight">Dietary Fiber <div class="weight"><span id="dietary-fiber">0.0</span>g</div>
+                <div class="dv"><span id="dietary-fiber-pct">0</span>%</div></div>
+                
             </div></td>
         </tr>
                     <tr>
             <td class="indent">
                 <div class="line">
-                <div class="labellight">Sugars <div class="weight" id="sugars">0.0g</div></div>
+                <div class="labellight">Sugars <div class="weight" id="sugars">0.0</div>g</div>
                 </div>
             </td>
         </tr>
                     <tr>
             <td>
                 <div class="line">
-                <div class="label">Protein <div class="weight" id="protein">0.0g</div>
+                <div class="label">Protein <div class="weight"><span id="protein">0.0</span>g</div>
                 </div>
             </div></td>
         </tr>
@@ -130,23 +139,23 @@
                 <table cellspacing="0" cellpadding="0" border="0" class="vitamins">
                 <tbody>
                 <tr>
-                    <td>Vitamin A &nbsp;&nbsp; <span id="vitamin-a">0%</span></td>
+                    <td>Vitamin A &nbsp;&nbsp; <span id="vitamin-a">0</span>%</td>
                     <td align="center">•</td>
                     <td align="right">Calcium &nbsp;&nbsp; <span id="calcium">0%</span></td>
                 </tr>
                 <tr>
-                    <td>Vitamin B &nbsp;&nbsp; <span id="vitamin-b">0%</span></td>
+                    <td>Vitamin B &nbsp;&nbsp; <span id="vitamin-b">0</span>%</td>
                     <td align="center">•</td>
                     <td align="right">Iron &nbsp;&nbsp; <span id="iron">0%</span></td>
                 </tr>
                 <tr>
-                    <td>Vitamin C &nbsp;&nbsp; <span id="vitamin-c">0%</span></td>
-                    <td align="center">•</td>
-                    <td align="right">Potassium &nbsp;&nbsp; <span id="potassium">0%</span></td>
+                    <td>Vitamin C &nbsp;&nbsp; <span id="vitamin-c">0</span>%</td>
+                    <!-- <td align="center">•</td>
+                    <td align="right">Potassium &nbsp;&nbsp; <span id="potassium">0%</span></td> -->
                 </tr>
                 <tr>
-                    <td>Vitamin D &nbsp;&nbsp; <span id="vitamin-d">0%</span></td>
-                    <td align="center">•</td>
+                    <td>Vitamin D &nbsp;&nbsp; <span id="vitamin-d">0</span>%</td>
+                    <!-- <td align="center">•</td> -->
                 </tr>                        
                 </tbody></table>
             </td>

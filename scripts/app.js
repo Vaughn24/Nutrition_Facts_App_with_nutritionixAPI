@@ -43,22 +43,24 @@ function getfoodnutrients(search_food){
             const vitamin_b = document.querySelector("#vitamin-b")
             const vitamin_c = document.querySelector("#vitamin-c")
             const vitamin_d = document.querySelector("#vitamin-d")
-            // const calcium = document.querySelector("#calcium")
-            // const iron = document.querySelector("#iron")
-            // const potassium = document.querySelector("#potassium")
+            const calcium = document.querySelector("#calcium")
+            const iron = document.querySelector("#iron")
 
 
             food.innerHTML = data.foods[0].food_name;
             serving_size.innerHTML = data.foods[0].serving_weight_grams;
-            calories.innerHTML = data.foods[0].nf_calories;
+            calories.innerHTML = Math.round(data.foods[0].nf_calories)
 
-            total_fat.innerHTML = data.foods[0].nf_total_fat;
+            total_fat.innerHTML = Math.round(10*data.foods[0].nf_total_fat)/10;
             // ((APS*100)/65) = %DV
             total_fat_pct.innerHTML = Math.round(((data.foods[0].nf_total_fat*100)/65))
 
 
-            saturated_fat.innerHTML = data.foods[0].nf_saturated_fat;
+            saturated_fat.innerHTML = Math.round(10*(data.foods[0].nf_saturated_fat))/10;
             // ((APS*100)/20) = %DV
+// Math.round(10*X)/10;     // round X to tenths
+// Math.round(100*X)/100;   // round X to hundredths
+// Math.round(1000*X)/1000; // round X to thousandths
             saturated_fat_pct.innerHTML = Math.round(((data.foods[0].nf_saturated_fat*100)/20))
 
 
@@ -67,48 +69,126 @@ function getfoodnutrients(search_food){
             // ((APS*100)/300) = %DV
             cholesterol_pct.innerHTML = Math.round(((data.foods[0].nf_cholesterol*100)/300))
 
-            sodium.innerHTML = data.foods[0].nf_sodium;
+            sodium.innerHTML = Math.round(10*data.foods[0].nf_sodium)/10;
             // ((APS*100)/2400) = %DV
             sodium_pct.innerHTML = Math.round(((data.foods[0].nf_sodium*100)/2400))
 
             try{
-                potassium.innerHTML = data.foods[0].full_nutrients[16].value
-                // ((APS*100)/3500) = %DV
-                potassium_pct.innerHTML = Math.round(((data.foods[0].full_nutrients[16].value*100)/3500))
+                for(i=0; i < data.foods[0].full_nutrients.length; i++){
+                    counter_nutrient = 0
+                    if(data.foods[0].full_nutrients[i].attr_id == 306){
+                        counter_nutrient = data.foods[0].full_nutrients[i].value
+                        potassium.innerHTML = Math.round(counter_nutrient);
+                        potassium_pct.innerHTML = Math.round(((counter_nutrient*100)/3500));
+                    }else if(counter_nutrient == 0){
+                        potassium.innerHTML == 0
+                        potassium_pct.innerHTML == 0
+
+                    }
+                }
             } catch(err){
-                polyunsaturated_fat.innerHTML = 0;
+                potassium.innerHTML = 0;
                 potassium_pct.innerHTML = 0;
             }
 
-            total_carbohydrates.innerHTML = data.foods[0].nf_total_carbohydrate
+            total_carbohydrates.innerHTML = Math.round(data.foods[0].nf_total_carbohydrate)
 
             // ((APS*100)/300) = %DV
             total_carbohydrates_pct.innerHTML = Math.round(((data.foods[0].nf_total_carbohydrate*100)/300));
 
 
-            dietary_fiber.innerHTML = data.foods[0].nf_dietary_fiber;
+            dietary_fiber.innerHTML = Math.round(10*data.foods[0].nf_dietary_fiber)/10;
             // ((APS*100)/25) = %DV
             dietary_fiber_pct.innerHTML = Math.round(((data.foods[0].nf_dietary_fiber*100)/25))
 
 
-            sugars.innerHTML = data.foods[0].nf_sugars;
-            protein.innerHTML = data.foods[0].nf_protein;
+            sugars.innerHTML = Math.round(10*data.foods[0].nf_sugars)/10;
+            protein.innerHTML = Math.round(10*data.foods[0].nf_protein)/10;
 
             try{
-                polyunsaturated_fat.innerHTML = data.foods[0].full_nutrients[101].value
+                for(i=0; i < data.foods[0].full_nutrients.length; i++){
+                    counter_nutrient = 0
+                    if(data.foods[0].full_nutrients[i].attr_id == 646){
+                        counter_nutrient = data.foods[0].full_nutrients[i].value
+                        polyunsaturated_fat.innerHTML = Math.round(10*counter_nutrient)/10;
+                    }else if(counter_nutrient == 0){
+                        polyunsaturated_fat.innerHTML == 0
+
+                    }
+                }
             } catch(err){
                 polyunsaturated_fat.innerHTML = 0;
             }
+            
             try{
-                monounsaturated_fat.innerHTML = data.foods[0].full_nutrients[100].value;
+                for(i=0; i < data.foods[0].full_nutrients.length; i++){
+                    counter_nutrient = 0
+                    if(data.foods[0].full_nutrients[i].attr_id == 645){
+                        counter_nutrient = data.foods[0].full_nutrients[i].value
+                        monounsaturated_fat.innerHTML = Math.round(10*counter_nutrient)/10;
+                    }else if(counter_nutrient == 0){
+                        monounsaturated_fat.innerHTML == 0
+
+                    }
+                }
             } catch(err){
                 monounsaturated_fat.innerHTML = 0;
             }
 
-            vitamin_a.innerHTML = data.foods[0];
+            try{
+                for(i=0; i < data.foods[0].full_nutrients.length; i++){
+                    counter_nutrient = 0
+                    if(data.foods[0].full_nutrients[i].attr_id == 318){
+                        // ((APS*100)/5000)
+                        counter_nutrient = data.foods[0].full_nutrients[i].value
+                        vitamin_a.innerHTML = Math.round(((counter_nutrient*100)/5000))
+                    }else if(counter_nutrient == 0){
+                        vitamin_a.innerHTML == 0
+
+                    }
+                }
+                
+            } catch(err){
+                vitamin_a.innerHTML = 0;
+            }
+
             vitamin_b.innerHTML = data.foods[0];
             vitamin_c.innerHTML = data.foods[0];
             vitamin_d.innerHTML = data.foods[0];
+
+            try{
+                for(i=0; i < data.foods[0].full_nutrients.length; i++){
+                    counter_nutrient = 0
+                    if(data.foods[0].full_nutrients[i].attr_id == 301){
+                        // HELP ME :(
+                        counter_nutrient = data.foods[0].full_nutrients[i].value
+                        calcium.innerHTML = (counter_nutrient)
+                    }else if(counter_nutrient == 0){
+                        calcium.innerHTML == 0
+
+                    }
+                }
+                
+            } catch(err){
+                calcium.innerHTML = 0;
+            }
+
+            try{
+                for(i=0; i < data.foods[0].full_nutrients.length; i++){
+                    counter_nutrient = 0
+                    if(data.foods[0].full_nutrients[i].attr_id == 303){
+                        // ((APS*100)/18) = %DV
+                        counter_nutrient = data.foods[0].full_nutrients[i].value
+                        iron.innerHTML = Math.round(10*((counter_nutrient*100)/18))/10
+                    }else if(counter_nutrient == 0){
+                        iron.innerHTML == 0
+
+                    }
+                }
+                
+            } catch(err){
+                iron.innerHTML = 0;
+            }
 
 
         })

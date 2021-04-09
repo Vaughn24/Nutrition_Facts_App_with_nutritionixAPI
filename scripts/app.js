@@ -175,7 +175,7 @@ function getfoodnutrients(search_food){
                     if(data.foods[0].full_nutrients[i].attr_id == 301){
                         // HELP ME :(
                         counter_nutrient = data.foods[0].full_nutrients[i].value
-                        calcium.innerHTML = (counter_nutrient)
+                        calcium.innerHTML = Math.round(10*(counter_nutrient/1300)*100)/10
                     }else if(counter_nutrient == 0){
                         calcium.innerHTML == 0
 

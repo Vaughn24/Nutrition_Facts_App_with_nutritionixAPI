@@ -82,36 +82,38 @@ function processData(data, multiplier) {
     }
 
     serving_size.innerHTML = ((data.foods[0].serving_weight_grams)* multiplier).toFixed(1);
-    calories.innerHTML = Math.round(data.foods[0].nf_calories)
+    calories.innerHTML = (Math.round(data.foods[0].nf_calories)*multiplier).toFixed(1)
 
 
     total_fat.innerHTML = ((Math.round(10 * data.foods[0].nf_total_fat) / 10) * multiplier).toFixed(1);
     // ((APS*100)/65) = %DV
     total_fat_pct.innerHTML = (((data.foods[0].nf_total_fat * 100) / 65)* multiplier).toFixed(1)
 
-    calories_from_fat.innerHTML = Math.round((total_fat.innerHTML) * 9)
+    calories_from_fat.innerHTML = (((total_fat.innerHTML) * 9)*multiplier).toFixed(1)
 
-    saturated_fat.innerHTML = Math.round(10 * (data.foods[0].nf_saturated_fat)) / 10;
+    saturated_fat.innerHTML = ((Math.round(10 * (data.foods[0].nf_saturated_fat)) / 10)*multiplier).toFixed(1);
 
-    saturated_fat_pct.innerHTML = Math.round(((data.foods[0].nf_saturated_fat * 100) / 20))
+    saturated_fat_pct.innerHTML = ((Math.round(((data.foods[0].nf_saturated_fat * 100) / 20)))*multiplier).toFixed(1)
 
 
 
-    cholesterol.innerHTML = data.foods[0].nf_cholesterol;
+    cholesterol.innerHTML = ((data.foods[0].nf_cholesterol)*multiplier).toFixed(1);
     // ((APS*100)/300) = %DV
-    cholesterol_pct.innerHTML = Math.round(((data.foods[0].nf_cholesterol * 100) / 300))
+    cholesterol_pct.innerHTML = ((Math.round(((data.foods[0].nf_cholesterol * 100) / 300)))*multiplier).toFixed(1)
 
-    sodium.innerHTML = Math.round(10 * data.foods[0].nf_sodium) / 10;
+    sodium.innerHTML = ((Math.round(10 * data.foods[0].nf_sodium) / 10)*multiplier).toFixed(1)
     // ((APS*100)/2400) = %DV
-    sodium_pct.innerHTML = Math.round(((data.foods[0].nf_sodium * 100) / 2400))
+    sodium_pct.innerHTML = ((Math.round(((data.foods[0].nf_sodium * 100) / 2400)))*multiplier).toFixed(1)
 
     try {
         for (i = 0; i < data.foods[0].full_nutrients.length; i++) {
             counter_nutrient = 0
             if (data.foods[0].full_nutrients[i].attr_id == 306) {
                 counter_nutrient = data.foods[0].full_nutrients[i].value
-                potassium.innerHTML = Math.round(counter_nutrient);
-                potassium_pct.innerHTML = Math.round(((counter_nutrient * 100) / 3500));
+
+                potassium.innerHTML = ((Math.round(counter_nutrient))*multiplier).toFixed(1)
+                potassium_pct.innerHTML = ((Math.round(((counter_nutrient * 100) / 3500)))*multiplier).toFixed(1)
+
             } else if (counter_nutrient == 0) {
                 potassium.innerHTML == 0
                 potassium_pct.innerHTML == 0
@@ -123,26 +125,26 @@ function processData(data, multiplier) {
         potassium_pct.innerHTML = 0;
     }
 
-    total_carbohydrates.innerHTML = Math.round(data.foods[0].nf_total_carbohydrate)
+    total_carbohydrates.innerHTML = ((Math.round(data.foods[0].nf_total_carbohydrate))*multiplier).toFixed(1)
 
     // ((APS*100)/300) = %DV
-    total_carbohydrates_pct.innerHTML = Math.round(((data.foods[0].nf_total_carbohydrate * 100) / 300));
+    total_carbohydrates_pct.innerHTML = ((Math.round(((data.foods[0].nf_total_carbohydrate * 100) / 300)))*multiplier).toFixed(1)
 
 
-    dietary_fiber.innerHTML = Math.round(10 * data.foods[0].nf_dietary_fiber) / 10;
+    dietary_fiber.innerHTML = ((Math.round(10 * data.foods[0].nf_dietary_fiber) / 10)*multiplier).toFixed(1)
     // ((APS*100)/25) = %DV
-    dietary_fiber_pct.innerHTML = Math.round(((data.foods[0].nf_dietary_fiber * 100) / 25))
+    dietary_fiber_pct.innerHTML = ((Math.round(((data.foods[0].nf_dietary_fiber * 100) / 25)))*multiplier).toFixed(1)
 
 
-    sugars.innerHTML = Math.round(10 * data.foods[0].nf_sugars) / 10;
-    protein.innerHTML = Math.round(10 * data.foods[0].nf_protein) / 10;
+    sugars.innerHTML = ((Math.round(10 * data.foods[0].nf_sugars) / 10)*multiplier).toFixed(1)
+    protein.innerHTML = ((Math.round(10 * data.foods[0].nf_protein) / 10)*multiplier).toFixed(1)
 
     try {
         for (i = 0; i < data.foods[0].full_nutrients.length; i++) {
             counter_nutrient = 0
             if (data.foods[0].full_nutrients[i].attr_id == 646) {
                 counter_nutrient = data.foods[0].full_nutrients[i].value
-                polyunsaturated_fat.innerHTML = Math.round(10 * counter_nutrient) / 10;
+                polyunsaturated_fat.innerHTML = ((Math.round(10 * counter_nutrient) / 10)*multiplier).toFixed(1)
             } else if (counter_nutrient == 0) {
                 polyunsaturated_fat.innerHTML == 0
 
@@ -157,7 +159,7 @@ function processData(data, multiplier) {
             counter_nutrient = 0
             if (data.foods[0].full_nutrients[i].attr_id == 645) {
                 counter_nutrient = data.foods[0].full_nutrients[i].value
-                monounsaturated_fat.innerHTML = Math.round(10 * counter_nutrient) / 10;
+                monounsaturated_fat.innerHTML = ((Math.round(10 * counter_nutrient) / 10)*multiplier).toFixed(1)
             } else if (counter_nutrient == 0) {
                 monounsaturated_fat.innerHTML == 0
 
@@ -173,7 +175,7 @@ function processData(data, multiplier) {
             if (data.foods[0].full_nutrients[i].attr_id == 318) {
                 // ((APS*100)/5000)
                 counter_nutrient = data.foods[0].full_nutrients[i].value
-                vitamin_a.innerHTML = Math.round(((counter_nutrient * 100) / 5000))
+                vitamin_a.innerHTML = ((Math.round(((counter_nutrient * 100) / 5000)))*multiplier).toFixed(1)
             } else if (counter_nutrient == 0) {
                 vitamin_a.innerHTML == 0
 
@@ -190,7 +192,7 @@ function processData(data, multiplier) {
             if (data.foods[0].full_nutrients[i].attr_id == 401) {
                 // ((APS*100)/60) = %DV
                 counter_nutrient = data.foods[0].full_nutrients[i].value
-                vitamin_c.innerHTML = Math.round(((counter_nutrient * 100) / 60))
+                vitamin_c.innerHTML = ((Math.round(((counter_nutrient * 100) / 60)))*multiplier).toFixed(1)
             } else if (counter_nutrient == 0) {
                 vitamin_c.innerHTML == 0
 
@@ -207,7 +209,7 @@ function processData(data, multiplier) {
             if (data.foods[0].full_nutrients[i].attr_id == 301) {
 
                 counter_nutrient = data.foods[0].full_nutrients[i].value
-                calcium.innerHTML = Math.round(10 * (counter_nutrient / 1300) * 100) / 10
+                calcium.innerHTML = ((Math.round(10 * (counter_nutrient / 1300) * 100) / 10)*multiplier).toFixed(1)
             } else if (counter_nutrient == 0) {
                 calcium.innerHTML == 0
 
@@ -224,7 +226,7 @@ function processData(data, multiplier) {
             if (data.foods[0].full_nutrients[i].attr_id == 303) {
                 // ((APS*100)/18) = %DV
                 counter_nutrient = data.foods[0].full_nutrients[i].value
-                iron.innerHTML = Math.round(10 * ((counter_nutrient * 100) / 18)) / 10
+                iron.innerHTML = ((Math.round(10 * ((counter_nutrient * 100) / 18)) / 10)*multiplier).toFixed(1)
             } else if (counter_nutrient == 0) {
                 iron.innerHTML == 0
 

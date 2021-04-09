@@ -133,7 +133,7 @@ function processData(data, multiplier) {
 
     dietary_fiber.innerHTML = ((Math.round(10 * data.foods[0].nf_dietary_fiber) / 10)*multiplier).toFixed(1)
     // ((APS*100)/25) = %DV
-    dietary_fiber_pct.innerHTML = ((Math.round(((data.foods[0].nf_dietary_fiber * 100) / 25)))*multiplier).toFixed(1)
+    dietary_fiber_pct.innerHTML = ((((data.foods[0].nf_dietary_fiber * 100) / 25))*multiplier).toFixed(1)
 
 
     sugars.innerHTML = ((Math.round(10 * data.foods[0].nf_sugars) / 10)*multiplier).toFixed(1)

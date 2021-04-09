@@ -91,7 +91,7 @@ function processData(data, multiplier) {
 
     calories_from_fat.innerHTML = (((total_fat.innerHTML) * 9)*multiplier).toFixed(1)
 
-    saturated_fat.innerHTML = ((Math.round(10 * (data.foods[0].nf_saturated_fat)) / 10)*multiplier).toFixed(1);
+    saturated_fat.innerHTML = (((data.foods[0].nf_saturated_fat))*multiplier).toFixed(1);
 
     saturated_fat_pct.innerHTML = ((Math.round(((data.foods[0].nf_saturated_fat * 100) / 20)))*multiplier).toFixed(1)
 

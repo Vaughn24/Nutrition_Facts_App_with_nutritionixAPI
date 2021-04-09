@@ -1,0 +1,71 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    gap: 1em;
+  }
+  
+  .search-wrap input[type="text"] {
+    height: 63px;
+    font-size: 2rem;
+    font-family: "Montserrat";
+    font-weight: 100;
+    outline: none;
+    color: #555;
+    border: 0;
+    max-width: 0px;
+    z-index: 3;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+    background: white;
+    width: min-content;
+    border-radius: 1em;
+  }
+  
+  .search-wrap input[type="text"]:not(:focus) {
+    /* border-bottom: 1px solid #BBB; */
+    padding: 0;
+  }
+
+  .search-wrap input[type="text"]:focus {
+    /* border-bottom: 1px solid #BBB; */
+    max-width: 1000px;
+    padding: 0 1em;
+    outline: none;
+    border: 1px solid #f0f0f0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    cursor: text;
+  }
+  
+
+  .search-submit-wrapper {
+    border: 1px solid #f0f0f0;
+    width: min-content;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    transition: opacity .5s ease-in-out;
+    background-color: white;
+  }
+  
+  .search-submit-wrapper:hover {
+    opacity: 0.8;
+  }
+
+  .search-wrap input[type="submit"] {
+    height: 63px;
+    width: 63px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFU1NT9fX1lJSUXl5e1dXVfn5+c3Nz6urqv7+/tLS0iYmJqampn5+fysrK39/faWlp////Vi4ZywAAABF0Uk5T/////////////////////wAlrZliAAABLklEQVR42rSWWRbDIAhFHeOUtN3/ags1zaA4cHrKZ8JFRHwoXkwTvwGP1Qo0bYObAPwiLmbNAHBWFBZlD9j0JxflDViIObNHG/Do8PRHTJk0TezAhv7qloK0JJEBh+F8+U/hopIELOWfiZUCDOZD1RADOQKA75oq4cvVkcT+OdHnqqpQCITWAjnWVgGQUWz12lJuGwGoaWgBKzRVBcCypgUkOAoWgBX/L0CmxN40u6xwcIJ1cOzWYDffp3axsQOyvdkXiH9FKRFwPRHYZUaXMgPLeiW7QhbDRciyLXJaKheCuLbiVoqx1DVRyH26yb0hsuoOFEPsoz+BVE0MRlZNjGZcRQyHYkmMp2hBTIzdkzCTc/pLqOnBrk7/yZdAOq/q5NPBH1f7x7fGP4C3AAMAQrhzX9zhcGsAAAAASUVORK5CYII=) center center no-repeat;
+    text-indent: -10000px;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: all .5s ease-in-out;
+    outline: 0 !important;
+  }

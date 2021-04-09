@@ -1,9 +1,9 @@
 *{
-  background-color: rgb(242, 242, 242);
+  background-color: #fff;
 }
 
 /* SEARCH BAR CSS */
-.search-wrap {
+/* .search-wrap {
   margin: 50px 100px;
   display: inline-block;
   position: relative;
@@ -65,7 +65,7 @@
 
 .search-wrap input[type="submit"]:hover {
   opacity: 0.8;
-}
+} */
 
 /* END OF SEARCH BAR CSS */
 
@@ -82,14 +82,43 @@
 
 
 /* NUTRITION TABLE */
+.food-serving-wrapper {
+  display: flex;
+  align-items: center;
+}
 
+.food-serving-wrapper input {
+  max-width: 3em;
+}
+
+.nutrition-facts-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2em;
+}
+
+.nutrition-facts-paper {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  padding: 1em;
+  border: 1px solid #f0f0f0;
+  background: white;
+  width: min-content;
+  border-radius: 1em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.nutritionfacts table{
+  width: 18.2em;
+  padding: 0;
+
+}
 .nutritionfacts { 
   border:1px solid black; 
   padding:3px; 
-  width:15.2em; 
-  margin-left: auto;
-  margin-right: auto;
-  
+  width:18.2em;  
 }
 
 .nutritionfacts td { 
@@ -110,8 +139,13 @@
 }
 .nutritionfacts div.serving { 
   font-family:Arial,Helvetica,sans-serif; 
-  font-size:8pt; 
+  font-size:11pt; 
   text-align:center; 
+}
+.nutritionfacts .amount-serving { 
+  font-family:Arial,Helvetica,sans-serif; 
+  font-size:8.2pt; 
+  font-weight:900;
 }
 .nutritionfacts div.weight { 
   display:inline; 
@@ -144,6 +178,12 @@
 .nutritionfacts .highlighted {
   border:1px dotted grey;
   padding:2px;
+}
+.nutritionfacts .dvlabel {
+  text-align: right;
+}
+.nutritionfacts .center {
+  text-align: center;
 }
 
 /* END OF NUTRITION TABLE */

@@ -1,176 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nutrition</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
 
 </head>
+
 <body>
     <div class="container">
         <div class="header">
-        <div class="search-wrap">
-            <input id="search" name="search" type="text" placeholder="What're we looking for ?">
-            <input id="search_submit" value="Rechercher" type="submit" onclick="searchValue()">
+            <div class="search-wrap">
+                <input id="search" name="search" type="text" placeholder="What're we looking for ?"
+                    onblur="onBlurSearch()">
+                <div class="search-submit-wrapper">
+                    <input id="search_submit" value="Rechercher" type="submit" onclick="onOpenSearch()">
+                </div>
+            </div>
 
         </div>
+
+
+        <!-- NUTRITION FACTS -->
+
+        <div class="nutrition-facts-container">
+            <div class="nutrition-facts-paper">
+                <img class="food-image-style" id="food-image"
+                    src="https://www.kindpng.com/picc/m/502-5025070_avocado-notperfect-green-healthy-food-cute-happy-cute.png">
+                <div class="nutritionfacts">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="caption">Nutrition Facts</td>
+                            </tr>
+                            <div class="neck"></div>
+                            <td>Food: <span class="labellight" id="food"></span></td>
+                            <tr>
+                                <td>
+                                    <div class="food-serving-wrapper">
+                                        <input id="food-qty" type='number' min='0'/>
+                                        <div class="serving">Serving Size: <span id="serving-size">0</span>g </div>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="amount-serving">
+                                    <div class="line">Amount Per Serving</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="line">
+                                        <div class="label">Calories <div class="weight" id="calories">0</div>
+                                        </div>
+                                        <div style="padding-top: 1px; float: right;" class="labellight">Calories from
+                                            Fat
+                                            <div class="weight" id="calories-from-fat">0</div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="line">
+                                        <div class="dvlabel">% Daily Value<sup>*</sup></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="line">
+                                        <div class="label">Total Fat <div class="weight"><span
+                                                    id="total-fat">0.0</span>g
+                                            </div>
+                                        </div>
+                                        <div class="dv"><span id="total-fat-pct">0</span>%</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="indent">
+                                    <div class="line">
+                                        <div class="labellight">Saturated Fat <div class="weight" id="saturated-fat">0.0
+                                            </div>g<div class="dv">
+                                                <span id="saturated-fat-pct">0</span>%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="indent">
+                                    <div class="line">
+                                        <div class="labellight">Polyunsaturated Fat <div class="weight"
+                                                id="polyunsaturated-fat">0.0</div>g</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="indent">
+                                    <div class="line">
+                                        <div class="labellight">Monounsaturated Fat <div class="weight"
+                                                id="monounsaturated-fat">0.0</div>g</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="line">
+                                        <div class="label">Cholesterol <div class="weight"><span
+                                                    id="cholesterol">0</span>mg
+                                            </div>
+                                        </div>
+                                        <div class="dv"><span id="cholesterol-pct">0</span>%</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="line">
+                                        <div class="label">Sodium <div class="weight"><span id="sodium">0</span>mg</div>
+                                        </div>
+                                        <div class="dv"><span id="sodium-pct">0</span>%</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="line">
+                                        <div class="label">Potassium <div class="weight"><span id="potassium">0</span>mg
+                                            </div>
+                                        </div>
+                                        <div class="dv"><span id="potassium-pct">0</span>%</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="line">
+                                        <div class="label">Total Carbohydrates <div class="weight"><span
+                                                    id="total-carbohydrates">0.0</span>g</div>
+                                        </div>
+                                        <div class="dv"><span id="total-carbohydrates-pct">0</span>%</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="indent">
+                                    <div class="line">
+                                        <div class="labellight">Dietary Fiber <div class="weight"><span
+                                                    id="dietary-fiber">0.0</span>g</div>
+                                            <div class="dv"><span id="dietary-fiber-pct">0</span>%</div>
+                                        </div>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="indent">
+                                    <div class="line">
+                                        <div class="labellight">Sugars <div class="weight" id="sugars">0.0</div>g</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="line">
+                                        <div class="label">Protein <div class="weight"><span id="protein">0.0</span>g
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="line">
+                                    </div>
+                </div>
+                </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <table class="vitamins">
+                            <tbody>
+                                <tr>
+                                    <td>Vitamin A &nbsp;&nbsp; <span id="vitamin-a">0</span>%</td>
+                                    <td class="center">•</td>
+                                    <td class="dvlabel">Calcium &nbsp;&nbsp; <span id="calcium">0</span>%</td>
+                                </tr>
+                                <tr>
+                                    <td>Vitamin C &nbsp;&nbsp; <span id="vitamin-c">0</span>%</td>
+                                    <td class="center">•</td>
+                                    <td class="dvlabel">Iron &nbsp;&nbsp; <span id="iron">0</span>%</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="line">
+                            <div class="labellight">
+                                <br><i>* Percent Daily Values are based on a 2000 calorie diet.</i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
         </div>
-
-      <img class="food-image-style" id="food-image" src="https://www.kindpng.com/picc/m/502-5025070_avocado-notperfect-green-healthy-food-cute-happy-cute.png">
-
-<!-- NUTRITION FACTS -->
-
-<div class="nutritionfacts">
-    <table width="242" cellspacing="0" cellpadding="0">
-        <tbody><tr>
-            <td class="caption">Nutrition Facts</td>
-        </tr>
-        <div class="neck"></div>
-        <td>Food: <span class="labellight" id="food"></span></td>
-        <tr>
-            <td><div class="serving">Serving Size: <span id="serving-size">0</span>g </div></td>
-
-        </tr> 
-        <tr>
-            <td style="font-size: 7pt"><div class="line">Amount Per Serving</div></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="line">
-                <div class="label">Calories <div class="weight" id="calories">0</div></div>
-                <div style="padding-top: 1px; float: right;" class="labellight">Calories from Fat 
-                    <div class="weight" id="calories-from-fat">0</div>
-                </div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td align="right"><div class="line"><div class="dvlabel">% Daily Value<sup>*</sup></div></div></td>
-        </tr>
-        <tr>
-            <td>
-                <div class="line">
-                <div class="label">Total Fat <div class="weight"><span id="total-fat">0.0</span>g</div></div>
-                <div class="dv"><span id="total-fat-pct">0</span>%</div>
-                </div>
-            </td>
-        </tr>
-                    <tr>
-            <td class="indent">
-                <div class="line">
-                <div class="labellight">Saturated Fat <div class="weight" id="saturated-fat">0.0</div>g<div class="dv"> 
-                    <span id="saturated-fat-pct">0</span>%</div></div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td class="indent">
-                <div class="line">
-                <div class="labellight">Polyunsaturated Fat <div class="weight" id="polyunsaturated-fat">0.0</div>g</div>
-                </div>
-            </td>
-        </tr>
-                    <tr>
-            <td class="indent">
-                <div class="line">
-                <div class="labellight">Monounsaturated Fat <div class="weight" id="monounsaturated-fat">0.0</div>g</div>
-                </div>
-            </td>
-        </tr>
-                    <tr>
-            <td>
-                <div class="line">
-                <div class="label">Cholesterol <div class="weight"><span id="cholesterol">0</span>mg</div></div>
-                <div class="dv" ><span id="cholesterol-pct">0</span>%</div>
-                </div>
-            </td>
-        </tr>
-                    <tr>
-            <td>
-                <div class="line">
-                <div class="label">Sodium <div class="weight"><span id="sodium">0</span>mg</div></div>
-                <div class="dv"><span id="sodium-pct">0</span>%</div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="line">
-                <div class="label">Potassium <div class="weight"><span id="potassium">0</span>mg</div></div>
-                <div class="dv"><span id="potassium-pct">0</span>%</div>
-                </div>
-            </td>
-        </tr>
-                    <tr>
-            <td>
-                <div class="line">
-                <div class="label">Total Carbohydrates <div class="weight"><span id="total-carbohydrates">0.0</span>g</div></div>
-                <div class="dv" ><span id="total-carbohydrates-pct">0</span>%</div>
-                </div>
-            </td>
-        </tr>
-                    <tr>
-            <td class="indent">
-                <div class="line">
-                <div class="labellight">Dietary Fiber <div class="weight"><span id="dietary-fiber">0.0</span>g</div>
-                <div class="dv"><span id="dietary-fiber-pct">0</span>%</div></div>
-                
-            </div></td>
-        </tr>
-        <tr>
-            <td class="indent">
-                <div class="line">
-                <div class="labellight">Sugars <div class="weight" id="sugars">0.0</div>g</div>
-                </div>
-            </td>
-        </tr>
-                    <tr>
-            <td>
-                <div class="line">
-                <div class="label">Protein <div class="weight"><span id="protein">0.0</span>g</div>
-                </div>
-            </div></td>
-        </tr>
-
-        <tr>
-            <td>
-                <div class="line">
-                </div>
-            </div></td>
-        </tr>
-
-        
-                    <tr>
-            <td>
-                <table cellspacing="0" cellpadding="0" border="0" class="vitamins">
-                <tbody>
-                <tr>
-                    <td>Vitamin A &nbsp;&nbsp; <span id="vitamin-a">0</span>%</td>
-                    <td align="center">•</td>
-                    <td align="right">Calcium &nbsp;&nbsp; <span id="calcium">0</span>%</td>
-                </tr>
-                <tr>
-                    <td>Vitamin C &nbsp;&nbsp; <span id="vitamin-c">0</span>%</td>
-                    <td align="center">•</td>
-                    <td align="right">Iron &nbsp;&nbsp; <span id="iron">0</span>%</td>
-                </tr>
-
-                </tbody></table>
-            </td>
-        </tr>
-                    <tr>
-            <td><div class="line">
-            <div class="labellight">
-            <br><i>* Percent Daily Values are based on a 2000 calorie diet.</i>
-            </div>
-            </div>
-            </td>
-        </tr>
-    </tbody></table>
-</div>
-<!-- END OF NUTRITION FACTS -->
+    </div>
+    <!-- END OF NUTRITION FACTS -->
 
 
 
@@ -179,6 +233,7 @@
 
 
     <script type="text/javascript" src="../scripts/app.js"></script>
-    
+
 </body>
+
 </html>

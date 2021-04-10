@@ -127,6 +127,10 @@
 .nutritionfacts .center {
   text-align: center;
 }
+.nutritionfacts .calorie-from-fat{
+  padding-top: 1px; 
+  float: right;
+}
 
 /* END OF NUTRITION TABLE */
 

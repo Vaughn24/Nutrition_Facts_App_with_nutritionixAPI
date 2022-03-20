@@ -2,7 +2,9 @@
 *{
   background-color: #fff;
 }
-
+body {
+  margin-top: 80px;
+}
 
 /* FOOD IMAGE STYLE */
 .food-image-style{
